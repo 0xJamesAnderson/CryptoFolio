@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CoinList({ coins }) {
+function CoinList({ coins, onDelete }) {
   return (
     <div>
       <h2>My Holdings</h2>
@@ -11,6 +11,7 @@ function CoinList({ coins }) {
           {coins.map(coin => (
             <li key={coin.id}>
               {coin.name} - {coin.amount} units
+              <button onClick={() => onDelete(coin.id)}>Remove</button>
             </li>
           ))}
         </ul>

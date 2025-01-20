@@ -9,12 +9,16 @@ function App() {
     setCoins([...coins, newCoin]);
   };
 
+  const handleDeleteCoin = (id) => {
+    setCoins(coins.filter(coin => coin.id !== id));
+  };
+
   return (
     <div>
       <h1>CryptoFolio</h1>
       <p>Your personal crypto portfolio tracker</p>
       <AddCoin onAddCoin={handleAddCoin} />
-      <CoinList coins={coins} />
+      <CoinList coins={coins} onDelete={handleDeleteCoin} />
     </div>
   );
 }
