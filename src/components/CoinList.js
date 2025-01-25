@@ -10,7 +10,7 @@ function CoinList({ coins, onDelete }) {
         <ul>
           {coins.map(coin => (
             <li key={coin.id}>
-              {coin.name} - {coin.amount} units
+              {coin.name} - {coin.amount} units @ $-- (Total: $--)
               <button onClick={() => onDelete(coin.id)}>Remove</button>
             </li>
           ))}
